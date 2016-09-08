@@ -1,5 +1,7 @@
-# HugeFileProcessor
-An utility to randomize and split really huge (100+ GB) text files
+# HugeFileProcessor-Scala
+An utility to randomize and split really huge (100+ GB) text files. 
+
+This is a Scala port of Mikhail Barg's original C# utility, allowing it to easily run on Linux and Mac OS X systems (and anywhere else supporting the JVM). It contains no dependencies, other than the base Java and Scala libraries, and a fat jar can easily be created with sbt assembly. The remainder of this readme is the same as in Mikhail Barg's C# version.
 
 # Motivation
 While doing some Machine Learning stuff, I've stumpled upon a need to process (mostly shuffle and split) **really huge** text files. Where "huge" might mean hundreds of gigabytes. For example the easiest way to feed data to [CNTK](https://github.com/Microsoft/CNTK) is using a text file. I've was amazed that I was not able to find any tool capable of suffling a huge file without loading it whole into RAM. So I wrote my own. Here it is.
@@ -23,12 +25,6 @@ If _test_ is set to 0, then not .test file is created and all lines get into .tr
 * **`-count <sourceFile>`**
 
 Just count number of lines in _sourceFile_.
-
-# Running the program
-
-The program is written in C#. It requires .Net 4.5.1 or greater. 
-
-To run on linux use Mono: `mono HugeFileProcessor.exe <options>`
 
 # Shuffling
 
