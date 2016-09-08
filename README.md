@@ -1,6 +1,10 @@
 # HugeFileProcessor-Scala
 
-This is a Scala port of Mikhail Barg's original C# utility, allowing it to easily run on Linux and Mac OS X systems (and anywhere else supporting the JVM). It contains no dependencies, other than the base Java and Scala libraries, and a fat jar can easily be created with sbt assembly. The remainder of this readme is the same as in Mikhail Barg's C# version.
+This is a Scala port of Mikhail Barg's original C# utility, allowing it to easily run on Linux and Mac OS X systems (and anywhere else supporting the JVM). It contains no dependencies, other than the base Java and Scala libraries, and a fat jar can easily be created with sbt assembly.
+
+Known limitations with this port: it cannot sort text files with more than about 2 billion rows. This is due to a Java limitation regarding max length of arrays. A straightforward workaround is possible by switching everything from Int to Long and using arrays of arrays and may be implemented at some point in the future (if you've implemented it yourself, a pull request would be much appreciated).
+
+The remainder of this readme is the same as in Mikhail Barg's C# version.
 
 # HugeFileProcessor
 
