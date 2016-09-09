@@ -112,12 +112,12 @@ object HugeFileProcessor {
 
       if (linesCount % VERBOSE_LINES_COUNT == 0) {
         val took = System.currentTimeMillis() - start
-        println(s"Current count is $linesCount, took $took, speed is ${math.round(linesCount.toDouble / took.millisToSeconds.toDouble)} lps");
+        println(s"Current count is $linesCount, took ${took.millisToFormattedString}, speed is ${math.round(linesCount.toDouble / took.millisToSeconds)} lps");
       }
     }
 
     val totalTime = System.currentTimeMillis() - start
-    println(s"Done. Lines count is $linesCount, took $totalTime, speed is ${math.round(linesCount.toDouble / totalTime.millisToSeconds.toDouble)} lps");
+    println(s"Done. Lines count is $linesCount, took ${totalTime.millisToFormattedString}, speed is ${math.round(linesCount.toDouble / totalTime.millisToSeconds)} lps");
 
     (linesCount, totalTime)
   }
